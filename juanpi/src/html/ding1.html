@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ding1.css">
+</head>
+
+<body>
+    <div id="toolbar">
+        <div class="conter">
+            <div id="tool_right"> <a id="tool_dl" href="denglv.html">登录</a>
+                <a id="tool_zc" href="zhuce.html">免费注册</a> |
+                <a id="" href="###">我的订单</a>
+                <a href="###">商家入驻</a>
+                <a id="tool_car" href="###"><span></span><span>购物袋</span>
+                    <em id="tool_car_num">0</em></a> |
+                <a href="###">商家中心</a>
+                <a id="tool_khfw" href="###">客户服务<ul class="kf">
+                        <li>帮助中心</li>
+                        <li>联系客服</li>
+                    </ul></a></div>
+
+        </div>
+    </div>
+</body>
+<script>
+    $('#tool_zc').click(() => {
+        setCookie('url', location.href, 1);
+    });
+    $('#tool_dl').click(() => {
+        setCookie('url', location.href, 1);
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,113 @@
+#header {
+    border-bottom: 2px solid #ff464e;
+    background: #fff;
+}
+
+.header_top {
+    height: 85px;
+    position: relative;
+
+    #header_logo {
+        width: 210px;
+        height: 52px;
+        background: url(../img/header_total.gif)no-repeat -72px -50px;
+        position: absolute;
+        top: 17px;
+    }
+
+    #ensaio {
+        width: 465px;
+        height: 33px;
+        background: url(../img/header_total.gif)no-repeat -0 0;
+        position: absolute;
+        top: 28px;
+        right: 270px;
+    }
+
+    #search {
+        position: absolute;
+        top: 25px;
+        right: 0;
+        width: 237px;
+        height: 35px;
+
+        #tex {
+            border: 0 none;
+            background: #efefef;
+            width: 190px;
+            height: 35px;
+            line-height: 30px;
+            padding-left: 10px;
+            margin: 2px 0 0 10px;
+            color: #000;
+        }
+
+        #search_btn {
+            background: url(../img/header_total.gif) no-repeat right -65px;
+            border: 0 none;
+            cursor: pointer;
+            height: 35px;
+            width: 37px;
+            position: absolute;
+            top: 2px;
+            right: 0;
+        }
+    }
+}
+
+#nav {
+    font-size: 0;
+
+    li {
+        padding: 10px 24px;
+        display: inline-block;
+        font-size: 14px;
+        height: 40px;
+        box-sizing: border-box;
+
+
+    }
+
+    li:nth-last-child(-n+4):hover {
+        color: #ff464e;
+    }
+
+    .nav_active {
+        background: red;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+        cursor: pointer;
+    }
+
+    li:nth-child(5) {
+        background: url(../img/phone_new_20151119.png) no-repeat 10px center;
+        position: relative;
+        cursor: pointer;
+
+        div {
+            position: absolute;
+            left: -20px;
+            top: 42px;
+            background: #fff;
+            display: none;
+            z-index: 20;
+            padding: 3px;
+
+            img {
+                width: 148px;
+                height: 148px;
+            }
+
+            p {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+
+    li:nth-child(5):hover div {
+        display: block;
+    }
+
+
+}

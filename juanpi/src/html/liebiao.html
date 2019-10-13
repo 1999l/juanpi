@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/liebiao.css">
+    <title>列表页</title>
+</head>
+
+<body>
+    <div class="toolbar">
+
+    </div>
+    <div class="header">
+
+    </div>
+    <div class="ck">
+        <div id="xiding">
+            <div class="conter">
+                <ul>
+                    <li class="first">今日上新</li>
+                    <li>女装</li>
+                    <li>男装</li>
+                    <li>鞋子</li>
+                    <li>箱包</li>
+                    <li>母婴</li>
+                    <li>美妆</li>
+                    <li>居家</li>
+                    <li>家纺</li>
+                    <li>文体</li>
+                    <li>美食</li>
+                    <li>数码</li>
+                    <li>电器</li>
+                    <li>内衣</li>
+                    <li>配饰</li>
+                    <li class="last">[即将上线]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+
+    </div>
+    <div id="sp">
+        <div class="conter">
+            <div class="px">
+                <input type="button" value="价格升序" id="sheng">
+                <input type="button" value="价格降序" id="jiang">
+                <input type="text" id="num1"> -
+                <input type="text" id="num2">
+                <input type="button" value="筛选" id="sxbtn">
+            </div>
+            <ul id="main">
+
+            </ul>
+            <div id="main_btn"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="conter">
+            <div class="clear">
+                <div class="jma">
+                    <img src="../img/jp_app_90_new.png" alt="">
+                    <p>随时逛 及时抢</p>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>获取更新</dt>
+                        <dd><i></i>iPhone/Android</dd>
+                        <dd><i></i>卷皮QQ空间</dd>
+                        <dd><i></i>卷皮新浪微博</dd>
+                        <dd><i></i>开放API</dd>
+                    </dl>
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><i></i>卖家免费报名</dd>
+                        <dd><i></i>商家入驻</dd>
+                        <dd><i></i>廉政邮箱</dd>
+                        <dd><i></i>开放A平台</dd>
+                    </dl>
+                    <dl>
+                        <dt>公司信息</dt>
+                        <dd><i></i>关于卷皮</dd>
+                        <dd><i></i>媒体报道</dd>
+
+                    </dl>
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><i></i>新手上路</dd>
+                        <dd><i></i>网站地图</dd>
+
+                    </dl>
+                </div>
+                <div class="kf">
+                    <span></span>
+                    <span>
+                        <p>周一至周日</p> 9:00-18:00
+                    </span>
+                    <p>客服热线: 400-0090-869</p>
+                </div>
+            </div>
+
+            <p class="beian">武汉奇米网络科技有限公司 鄂ICP备10209250号 | ICP许可证号：鄂B2-20150109 |
+                鄂公网安备42018502000390号 | 食品流通许可证 SP4201991510041888　　
+            </p>
+            <p class="beian2">Copyright &copy; 2010 -2019 JuanPi.com All Rights Reserved</p>
+
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    let username = getCookie('username');
+    if (username) {
+        $('.toolbar').load('ding2.html')
+    } else {
+        $('.toolbar').load('ding1.html')
+    }
+    $('.right').load('youce.html')
+    $('.header').load('seach.html')
+
+    let ipage = 1;//获取第一页
+    let num = 80;//每页40条数据
+    let paixu = '';
+    let min = '';
+    let max = '';
+    let val = '';
+    function init() {
+
+
+        ajax({
+            type: 'get',
+            url: '../api/liebiao.php',
+            data: {
+                ipage,
+                num,
+                paixu,
+                min,
+                max,
+                val
+
+            },
+            success: str => {
+                // console.log(str);
+
+                creat(str);
+            }
+        });
+        //渲染
+        function creat(str) {
+
+            let arr = JSON.parse(str);
+            let html = '';
+            console.log(arr.list);
+            for (let i = 0; i < arr.list.length; i++) {
+
+                html += `
+                        <li data-id=${arr.list[i].sid}><img src="${arr.list[i].img}" alt="" class="lian">
+                    <p><em>￥</em><span>${arr.list[i].price}</span><i>￥${arr.list[i].oldprice}</i></p>
+                    <h3  class="lian">${arr.list[i].title}<span>${arr.list[i].tempo}</span></h3>
+                    <div><i></i></div>
+                </li>
+                        `;
+            }
+            $('#main').html(html);
+            //2.计算总页码
+            let sum = Math.ceil(arr.total / num);
+            console.log(sum);
+
+            let aStr = '';
+            aStr += `<a href="###" class="prive">上一页</a>`;
+            if (sum > 5) {
+                aStr += `<a href="###" class="fanye">1</a>
+                <a href="###" class="fanye">2</a><a href="###" class="fanye">3</a>
+                <a href="###">···</a><a href="###" class="fanye">${sum}</a>`;
+            } else {
+                for (let i = 0; i < sum; i++) {
+                    aStr += `<a href="###" class="fanye">${i + 1}</a>`;
+
+                }
+            }
+
+            let pages = document.getElementById('main_btn');
+            aStr += `<a href="###" class="next">下一页</a>`;
+            pages.innerHTML = aStr;
+            pages.children[ipage].classList.add('active');
+
+            //3.点击跳转到对应内容
+            pages.onclick = ev => {
+                if (ev.target.className == 'fanye') {
+                    ipage = ev.target.innerHTML;
+                    init();
+                }
+                if (ev.target.className == 'prive') {
+                    ipage--;
+                    if (ipage <= 1) {
+                        ipage = 1;
+                    }
+                    init();
+                }
+                if (ev.target.className == 'next') {
+                    ipage++;
+                    if (ipage >= sum) {
+                        ipage = sum;
+                    }
+                    init();
+                }
+            }
+
+
+        }
+    }
+
+    init();
+
+
+    //吸顶
+    window.onscroll = function () {
+        let xiding = document.getElementById('xiding');
+        let ck = document.querySelector('.ck');
+        let gunju = window.scrollY;
+        if (gunju >= ck.offsetTop) {
+            xiding.className = 'xi';
+        } else {
+            xiding.className = ' ';
+        }
+    }
+
+
+
+    $('#sheng').click(() => {
+        paixu = 'asc';
+        ipage = 1
+        init();
+    });
+    $('#jiang').click(() => {
+        paixu = 'desc';
+        ipage = 1
+        init();
+    });
+    $('#sxbtn').click(() => {
+        min = $('#num1').val().trim();
+        max = $('#num2').val().trim();
+        ipage = 1
+        init();
+    });
+    $('.header').on("click", "#search_btn", function () {
+        ipage = 1
+        min = $('#num1').val().trim();
+        max = $('#num2').val().trim();
+        val = $('#tex').val().trim();
+        init();
+    });
+    $('#main').on("click", ".lian", function (ev) {
+        let sid = ev.target.parentNode.dataset.id;
+        let username = getCookie('username');
+        ajax({
+            type: 'post',
+            url: '../api/car.php',
+            data: {
+                sid,
+                goodcar: 'cun'
+            },
+            success: str => {
+
+                // console.log(str);
+                let arr = JSON.parse(str);
+                let title = arr.list[0].title;
+                let oldprice = arr.list[0].oldprice;
+                let price = arr.list[0].price;
+                let img = arr.list[0].img;
+                ajax({
+                    type: 'post',
+                    url: '../api/car.php',
+                    data: {
+                        username,
+                        sid,
+                        title,
+                        oldprice,
+                        price,
+                        img,
+                        goodcar: 'cunru',
+
+
+                    },
+                    success: str => {
+                        location.href = 'xiangqing.html?sid=' + sid;
+                    }
+                });
+
+            }
+        });
+
+    });
+
+</script>
+
+</html>

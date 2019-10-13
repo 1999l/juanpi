@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>卷皮网</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../sass/shouye.css">
+    <link rel="stylesheet" href="../img/font/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/swiper.min.js"></script>
+    <style type="text/css">
+        #bannar #swiper-container {
+            width: 700px;
+            height: 360px;
+            background: #ccc;
+            box-sizing: border-box;
+        }
+
+        #bannar .swiper-container img {
+            width: 700px;
+            height: 360px;
+        }
+
+        #bannar .swiper-slide {
+            /*设置文字大小,一般不需要写*/
+            font-size: 60px;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        #bannar .swiper-pagination-bullet {
+            /*默认的焦点样式*/
+            color: #fff;
+            background: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+            height: 10px;
+            margin-right: 7px;
+            width: 10px;
+            overflow: hidden;
+            vertical-align: middle;
+        }
+
+        #bannar .swiper-pagination-bullet-active {
+            /*焦点高亮*/
+
+
+            background: transparent;
+            border: 3px solid #fff;
+        }
+
+        #bannar .swiper-container {
+            width: 700px;
+            height: 380px;
+            display: flex;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+             需求：使用swiper插件制作轮播图
+
+             步骤：
+                 * 复制html结构
+                 * 链接插件提供的css和js
+                 * 添加样式，覆盖默认样式(重点)
+                 * 添加js,让插件效果显示出来
+
+             切换效果:点击/滚动滑轮/拖拽都可以切换图片
+        */
+
+    </script>
+
+</head>
+
+<body>
+    <div class="toolbar">
+
+    </div>
+    <div class="header">
+
+    </div>
+    <div id="bannar">
+        <div class="conter">
+            <div class="bannar_l">
+                <ul>
+                    <li><em class="iconfont icon-nvzhuang"></em><span>女装</span></li>
+                    <li><em class="iconfont icon-nanzhuang"></em><span>男装</span></li>
+                    <li><em class="iconfont icon-xiezi"></em><span>鞋子</span></li>
+                    <li><em class="iconfont icon-xiangbao"></em><span>箱包</span></li>
+                    <li><em class="iconfont icon-muying"></em><span>母婴</span></li>
+                    <li><em class="iconfont icon-meizhuang"></em><span>美妆</span></li>
+                    <li><em class="iconfont icon-san"></em><span>居家</span></li>
+                    <li><em class="iconfont icon-jujia"></em><span>家纺</span></li>
+                    <li><em class="iconfont icon-qianbi"></em><span>文体</span></li>
+                    <li><em class="iconfont icon-meishi"></em><span>美食</span></li>
+                    <li><em class="iconfont icon-xiangji-copy"></em><span>数码</span></li>
+                    <li><em class="iconfont icon-xiyiji"></em><span>电器</span></li>
+                    <li><em class="iconfont icon-neiyi-copy"></em><span>内衣</span></li>
+                    <li><em class="iconfont icon-yanjing-copy"></em><span>配饰</span></li>
+                </ul>
+            </div>
+            <div id="bannar_tu">
+                <div class="swiper-container" id="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../img/bannar1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/bannar2.png" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/bannar3.jpg" alt=""></div>
+
+                    </div>
+                    <!--按钮-->
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <!--分页-->
+                    <div class="swiper-pagination bai"></div>
+                </div>
+
+            </div>
+            <div class="bannar_r">
+                <ul>
+                    <li><img src="../img/r_1.jpg" alt=""></li>
+                    <li><img src="../img/r_2.jpg" alt=""></li>
+                    <li><img src="../img/r_3.jpg" alt=""></li>
+                    <li><img src="../img/r_4.jpg" alt=""></li>
+                    <li><img src="../img/r_5.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div class="gua"><img src="../img/jp_app_index.png" alt=""></div>
+        </div>
+    </div>
+    <div id="jrpp">
+        <div class="conter">
+            <div class="jrpp_top">
+                <span>今日品牌</span>
+                <i>TODAY'S BRAND</i>
+                <a href="###">全部品牌</a>
+            </div>
+            <ul class="jrpp_middle">
+                <li>
+                    <img src="../img/5d82e82f33b0894abe1156c3_680x280.jpg" alt="">
+                    <p><img src="../img/clock.png" alt=""><span>剩余 9天 22时 45分 59秒</span></p>
+                    <div><img src="../img/55e00195d0516_160x80.png" alt="">
+                        <span><em>0.8</em>折起</span><a href="###">马上抢</a></div>
+                </li>
+                <li>
+                    <img src="../img/5d88274eb6f8ea502f67fa77_680x280.png" alt="">
+                    <p><span><img src="../img/clock.png" alt=""></span>剩余 3天 12时 25分 19秒</p>
+                    <div><span>全场1折起</span><a href="###">进入活动</a></div>
+                </li>
+                <li>
+                    <img src="../img/5d88277933b0897e6673d45d_680x280.jpg" alt="">
+                    <p><span><img src="../img/clock.png" alt=""></span>剩余 6天 8时 33分 44秒</p>
+                    <div><span>大牌特惠1折起</span><a href="###">进入活动</a></div>
+                </li>
+                <li>
+                    <img src="../img/5d8c1901b6f8ea34bd20dc2c_680x280.jpg" alt="">
+                    <p><span><img src="../img/clock.png" alt=""></span>剩余 1天 2时 53分 35秒</p>
+                    <div><img src="../img/594b8ea6957b52036e4349a7_180x90.png" alt="">
+                        <span><em>2.7</em>折起</span><a href="###">马上抢</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="jrpp_footer">
+                <li>更多品牌特卖：</li>
+                <li class="first"><img src="../img/551e3c4cb3615_80x40.png" alt=""></li>
+                <li><img src="../img/5d21a636b6f8ea397376cad8_180x90.png" alt=""></li>
+                <li><img src="../img/565b984092be598a878b457b_180x90.png" alt=""></li>
+                <li><img src="../img/582e7907151ad1b51b8b45df_180x90.png" alt=""></li>
+                <li><img src="../img/58a3cd55db01d9e17b8b45fe_180x90.png" alt=""></li>
+                <li><img src="../img/5d36c95233b0895b047abfed_180x90.png" alt=""></li>
+                <li><img src="../img/596c3ea38150a153625a9103_180x90.png" alt=""></li>
+                <li><img src="../img/5a5f0e8b8150a11c6341316b_180x90.png" alt=""></li>
+                <li class="last">查看全部</li>
+            </ul>
+        </div>
+    </div>
+    <div id="xiding" class="xi">
+        <div class="conter">
+            <ul>
+                <li class="first">今日上新</li>
+                <li>女装</li>
+                <li>男装</li>
+                <li>鞋子</li>
+                <li>箱包</li>
+                <li>母婴</li>
+                <li>美妆</li>
+                <li>居家</li>
+                <li>家纺</li>
+                <li>文体</li>
+                <li>美食</li>
+                <li>数码</li>
+                <li>电器</li>
+                <li>内衣</li>
+                <li>配饰</li>
+                <li class="last">[即将上线]</li>
+            </ul>
+        </div>
+    </div>
+    <div id="jrxp">
+        <div class="conter">
+            <div class="jrxp_top">
+                <span>今日新品</span>
+                <i>TODAY'S NEW</i>
+                <em>每天10十点上新</em>
+            </div>
+            <ul id="main">
+                <!-- <li><img src="img/img/5c9b60b3b6f8ea23391ffda5_800x800.jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>上新</span></h3>
+                    <div><i></i></div>
+                </li> -->
+                <!-- <li><img src="img/img/5d0ecf1033b0894ae823b11f_800x800.jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>剩3天</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/5d40156db6f8ea6efe27388c_800x800.jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>剩3天</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/5d68bcaa33b089694e4c385a_800x800.jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>上新</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/5d8d742bb6f8ea02f1598017_800x800.jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i>
+                        <p><em>￥</em><span>80</span><i>￥233</i></p>
+                        <h3>简约百搭链条小方包<span>剩3天</span></h3>
+                    </p>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/jpg.jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>上新</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/jpg (2).jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>上新</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/jpg (3).jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>剩6天</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/jpg (4).jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>上新</span></h3>
+                    <div><i></i></div>
+                </li>
+                <li><img src="img/img/jpg (1).jpg" alt="">
+                    <p><em>￥</em><span>80</span><i>￥233</i></p>
+                    <h3>简约百搭链条小方包<span>上新</span></h3>
+                    <div><i></i></div>
+                </li> -->
+            </ul>
+            <div id="main_btn"></div>
+        </div>
+    </div>
+    <div class="right">
+
+    </div>
+    <div id="footer">
+        <div class="conter">
+            <div class="clear">
+                <div class="jma">
+                    <img src="../img/jp_app_90_new.png" alt="">
+                    <p>随时逛 及时抢</p>
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>获取更新</dt>
+                        <dd><i></i>iPhone/Android</dd>
+                        <dd><i></i>卷皮QQ空间</dd>
+                        <dd><i></i>卷皮新浪微博</dd>
+                        <dd><i></i>开放API</dd>
+                    </dl>
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><i></i>卖家免费报名</dd>
+                        <dd><i></i>商家入驻</dd>
+                        <dd><i></i>廉政邮箱</dd>
+                        <dd><i></i>开放A平台</dd>
+                    </dl>
+                    <dl>
+                        <dt>公司信息</dt>
+                        <dd><i></i>关于卷皮</dd>
+                        <dd><i></i>媒体报道</dd>
+
+                    </dl>
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><i></i>新手上路</dd>
+                        <dd><i></i>网站地图</dd>
+
+                    </dl>
+                </div>
+                <div class="kf">
+                    <span></span>
+                    <span>
+                        <p>周一至周日</p> 9:00-18:00
+                    </span>
+                    <p>客服热线: 400-0090-869</p>
+                </div>
+            </div>
+            <div class="lj">
+                <p>友情链接: </p>
+                <div class="swiper-container" id="swiper-lj">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><span>小分店</span>
+                            <span>九块邮</span>
+                            <span>易迅优惠券</span>
+                            <span>中国鲜花礼品网</span>
+                            <span>钻石小鸟</span>
+                            <span>箱包品牌</span>
+                            <span>网上购物</span>
+                            <span>中国品牌网</span>
+                            <span>会过VIP</span>
+                            <span>家具网</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <span>国画</span>
+                            <span>易登网</span>
+                            <span>普洱茶</span>
+                            <span>品牌鞋</span>
+                            <span>乐蜂网优惠券</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <p>更多>></p>
+            </div>
+            <p class="beian">武汉奇米网络科技有限公司 鄂ICP备10209250号 | ICP许可证号：鄂B2-20150109 |
+                鄂公网安备42018502000390号 | 食品流通许可证 SP4201991510041888　　
+            </p>
+            <p class="beian2">Copyright &copy; 2010 -2019 JuanPi.com All Rights Reserved</p>
+            <div class="tubiao"><img src="../img/r_315new.gif" alt="">
+                <img src="../img/r_cnnic.gif" alt="">
+                <img src="../img/r_gongshang.gif" alt="">
+                <img src="../img/sm_124x47.png_id_www.juanpi.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<!--
+//
+//                       _oo0oo_
+//                      o8888888o
+//                      88" . "88
+//                      (| -_- |)
+//                      0\  =  /0
+//                    ___/`---'\___
+//                  .' \\|     |// '.
+//                 / \\|||  :  |||// \
+//                / _||||| -:- |||||- \
+//               |   | \\\  -  /// |   |
+//               | \_|  ''\---/''  |_/ |
+//               \  .-\__  '-'  ___/-. /
+//             ___'. .'  /--.--\  `. .'___
+//          ."" '<  `.___\_<|>_/___.' >' "".
+//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//         \  \ `_.   \_ __\ /__ _/   .-` /  /
+//     =====`-.____`.___ \_____/___.-`___.-'=====
+//                       `=---='
+//
+//
+//             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//               佛祖保佑         永无BUG
+//               服务器稳         永不宕机
+//               流量翻倍         来路精准
+//               下单多多         万世长存
+//             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~富强、民主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/common.js"></script>
+
+<script type="text/javascript">
+    let username = getCookie('username')
+    if (username) {
+        $('.toolbar').load('ding2.html')
+    } else {
+        $('.toolbar').load('ding1.html')
+    }
+    $('.right').load('youce.html')
+    $('.header').load('seach.html')
+
+    //swiper基本款
+    var s1 = new Swiper('#swiper-container', {
+        autoplay: {//自动轮播
+            delay: 2000,//间隔时间
+            disableOnInteraction: false
+        },
+        loop: true,//无缝
+        navigation: {//上下按钮
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        pagination: {//焦点跟随
+            el: '.swiper-pagination',
+            clickable: true,//点击焦点跳到指定图片
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '"></span>';//生成焦点数字
+            }
+        },
+        mousewheel: true,//滚动滑轮可以切图
+        effect: 'slide'//选用:效果
+    });
+
+    var oBox = document.getElementById('swiper-container');
+
+    oBox.onmouseover = function () {//鼠标经过停止
+        s1.autoplay.stop();
+    }
+
+    oBox.onmouseout = function () {//鼠标经过离开
+        s1.autoplay.start();
+    }
+    $('#swiper-container').hover(
+        function () {
+            $('.swiper-button-prev').show();
+            $('.swiper-button-next').show();
+        },
+        function () {
+            $('.swiper-button-prev').hide();
+            $('.swiper-button-next').hide();
+        }
+    )
+    var s2 = new Swiper('#swiper-lj', {
+        autoplay: {//自动轮播
+            delay: 3000,//间隔时间
+            disableOnInteraction: false
+        },
+        loop: true,//无缝
+        direction: 'vertical',
+        effect: 'slide'//选用:效果
+    });
+
+    $(document).on('scroll', function () {
+        let num = $('.jrpp_middle').offset().top + $('.jrpp_middle').height();
+
+        if (num < $(document).scrollTop()) {
+            $('#xiding').css('display', 'block');
+        } else {
+            $('#xiding').css('display', 'none');
+        }
+
+
+
+    });
+
+    let ipage = 1;//获取第一页
+    let num = 80;//每页40条数据
+    let paixu = '';
+    let min = '';
+    let max = '';
+    let val = '';
+    function init() {
+
+
+        ajax({
+            type: 'get',
+            url: '../api/liebiao.php',
+            data: {
+                ipage,
+                num,
+                paixu,
+                min,
+                max,
+                val
+
+            },
+            success: str => {
+                // console.log(str);
+
+                creat(str);
+            }
+        });
+        //渲染
+        function creat(str) {
+
+            let arr = JSON.parse(str);
+            let html = '';
+            console.log(arr.list);
+            for (let i = 0; i < arr.list.length; i++) {
+
+                html += `
+                        <li data-id=${arr.list[i].sid}><img  src="${arr.list[i].img}" alt="" class="lian">
+                    <p><em>￥</em><span>${arr.list[i].price}</span><i>￥${arr.list[i].oldprice}</i></p>
+                    <h3  class="lian">${arr.list[i].title}<span>${arr.list[i].tempo}</span></h3>
+                    <div><i></i></div>
+                </li>
+                        `;
+            }
+            $('#main').html(html);
+            //2.计算总页码
+            let sum = Math.ceil(arr.total / num);
+            console.log(sum);
+
+            let aStr = '';
+            aStr += `<a href="###" class="prive">上一页</a>`;
+            if (sum > 5) {
+                aStr += `<a href="###" class="fanye">1</a>
+                <a href="###" class="fanye">2</a><a href="###" class="fanye">3</a>
+                <a href="###">···</a><a href="###" class="fanye">${sum}</a>`;
+            } else {
+                for (let i = 0; i < sum; i++) {
+                    aStr += `<a href="###" class="fanye">${i + 1}</a>`;
+
+                }
+            }
+
+            let pages = document.getElementById('main_btn');
+            aStr += `<a href="###" class="next">下一页</a>`;
+            pages.innerHTML = aStr;
+            pages.children[ipage].classList.add('active');
+
+            //3.点击跳转到对应内容
+            pages.onclick = ev => {
+                if (ev.target.className == 'fanye') {
+                    ipage = ev.target.innerHTML;
+                    init();
+                }
+                if (ev.target.className == 'prive') {
+                    ipage--;
+                    if (ipage <= 1) {
+                        ipage = 1;
+                    }
+                    init();
+                }
+                if (ev.target.className == 'next') {
+                    ipage++;
+                    if (ipage >= sum) {
+                        ipage = sum;
+                    }
+                    init();
+                }
+            }
+
+
+        }
+    }
+
+    init();
+
+
+    $('.iconfont').click(() => {
+        location.href = '../html/liebiao.html'
+    });
+    $('.bannar_l ul li span').click(() => {
+        location.href = '../html/liebiao.html'
+    });
+    $('#main').on("click", ".lian", function (ev) {
+        let sid = ev.target.parentNode.dataset.id;
+        let username = getCookie('username');
+        if (username) {
+            ajax({
+                type: 'post',
+                url: '../api/car.php',
+                data: {
+                    sid,
+                    goodcar: 'cun'
+                },
+                success: str => {
+
+                    // console.log(str);
+                    let arr = JSON.parse(str);
+                    let title = arr.list[0].title;
+                    let oldprice = arr.list[0].oldprice;
+                    let price = arr.list[0].price;
+                    let img = arr.list[0].img;
+                    ajax({
+                        type: 'post',
+                        url: '../api/car.php',
+                        data: {
+                            username,
+                            sid,
+                            title,
+                            oldprice,
+                            price,
+                            img,
+                            goodcar: 'cunru',
+
+
+                        },
+                        success: str => {
+                            location.href = 'xiangqing.html?sid=' + sid;
+                        }
+                    });
+
+                }
+            });
+        }
+    });
+
+
+</script>
+
+</html>

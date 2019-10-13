@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../sass/seach.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="conter">
+            <div class="header_top">
+                <div id="header_logo"></div>
+                <div id="ensaio"></div>
+                <div id="search">
+                    <input type="text" id="tex" placeholder="请输入想要找的宝贝">
+                    <input type="button" value="" id="search_btn">
+                </div>
+            </div>
+            <ul id="nav">
+                <li id="sye" class="nav_active">首页</li>
+                <li>品牌折扣</li>
+                <li>9.9包邮</li>
+                <li>即将上线</li>
+                <li>手机版
+                    <div>
+                        <img src="../img/jp_app_90_new.png" alt="">
+                        <p>随时逛 及时抢</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $('#sye').click(() => {
+        location.href = '../html/shouye.html';
+    });
+</script>
+
+</html>

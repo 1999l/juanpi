@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/ding2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="toolbar">
+        <div class="conter">
+            <div id="tool_right">
+                <div id="ming">13762780801
+                    <ul>
+                        <li>我的订单</li>
+                        <li>我的收藏</li>
+                        <li>我的积分</li>
+                        <li>我的优惠券</li>
+                        <li>账号设置</li>
+                        <li class="tuichu">退出</li>
+                    </ul>
+                </div>
+                <a id="" href="###">我的订单</a>
+                <a href="###">商家入驻</a>
+                <a id="tool_car" href="###"><span></span><span>购物袋</span>
+                    <em id="tool_car_num">0</em></a> |
+                <a href="###">商家中心</a>
+                <a id="tool_khfw" href="###">客户服务<ul class="kf">
+                        <li>帮助中心</li>
+                        <li>联系客服</li>
+                    </ul></a>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    (function () {
+        $('.tuichu').click(() => {
+            removeCookie('username');
+            $('#toolbar').load('ding1.html')
+        });
+        let username = getCookie('username');
+        function carNumber1() {
+            ajax({
+                type: 'get',
+                url: '../api/car.php',
+                data: {
+                    username,
+                    goodcar: 'changdu'
+                },
+                success: str => {
+                    // console.log(str);
+                    let arr = JSON.parse(str);
+
+                    let num3 = 0;
+
+                    for (let i = 0; i < arr.list.length; i++) {
+                        num3 += arr.list[i].num * 1;
+
+
+                    }
+                    $('#tool_car_num').text(num3);
+                }
+            });
+        }
+        carNumber1();
+        $('#tool_car').click(() => {
+            location.href = '../html/car.html';
+        });
+
+
+
+    })();
+</script>
+
+</html>
